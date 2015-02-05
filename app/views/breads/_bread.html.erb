@@ -1,0 +1,4 @@
+<div class="bread" id="bread-<%= bread.id %>" style="background-color:#ccc; padding:10px; margin:10px">
+	<p>Soy el pan <%= bread.name %> </p>
+	<%= link_to "Borrar", bread_path(bread), method: :delete, remote:true %>
+</div>

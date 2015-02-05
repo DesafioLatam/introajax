@@ -1,0 +1,7 @@
+<h2>Crea tu pan </h2>
+<%= form_for @bread, remote: true  do |f| %>
+	<%= f.label :name, "Pan" %>
+	<%= f.text_field :name %>
+	<%= f.submit %>
+<% end %>
+  
