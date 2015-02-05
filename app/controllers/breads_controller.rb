@@ -1,7 +1,17 @@
 class BreadsController < ApplicationController
   def index
-  	@breads = Bread.all
+    if params[:q]
+      @breads = Bread.where("name LIKE ?", "%#{params[:q]}%")
+    else
+    	@breads = Bread.all
+    end
     @bread = Bread.new
+
+    respond_to do |f|
+      f.html
+      f.js 
+    end
+
   end
 
   def create
