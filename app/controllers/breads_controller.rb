@@ -1,7 +1,8 @@
 class BreadsController < ApplicationController
   def index
     if params[:q]
-      @breads = Bread.where("name LIKE ?", "%#{params[:q]}%")
+      @breads = Bread.where(
+        "name LIKE ?", "%#{params[:q]}%")
     else
     	@breads = Bread.all
     end
